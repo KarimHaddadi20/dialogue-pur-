@@ -1,63 +1,55 @@
-import json
+
 from difflib import get_close_matches
 
-# Charger la base de connaissances à partir d'un fichier JSON
-def load_knowledge_base(file_path: str) -> dict:
-  with open(file_path, 'r') as file:
-    data: dict = json.load(file)
-  return data
+from flask import Flask, render_template, request
+import json
 
-# Sauvegarder la base de connaissances dans un fichier JSON
-def save_knowledge_base(file_path: str, data: dict):
-  with open(file_path, 'w') as file:
-    json.dump(data, file, indent=2)
+app = Flask(__name__)
 
-# Trouver la meilleure correspondance pour une question de l'utilisateur dans la liste des questions connues
-def find_best_match(user_question: str, question: list[str]) -> str | None:
-  matches: list = get_close_matches(user_question, question, n=1, cutoff=0.6)
-  return matches[0] if matches else None
+def load_knowledge_base(filename):
+    with open(filename, 'r') as file:
+        return json.load(file)
 
-# Obtenir la réponse à une question de la base de connaissances
-def get_anwser_for_question(question: str, knowledge_base: dict) -> str | None:
-  for q in knowledge_base["questions"]:
-    if q["question"] == question:
-      return q["answer"]
+def save_knowledge_base(filename, knowledge_base):
+    with open(filename, 'w') as file:
+        json.dump(knowledge_base, file)
 
-# La fonction principale du chatbot
+def find_best_match(user_input, questions):
+    for question in questions:
+        if user_input in question:
+            return question
+    return None
+
+def get_anwser_for_question(match, knowledge_base):
+    for item in knowledge_base["questions"]:
+        if item["question"] == match:
+            return item["answer"]
+    return None
+
+@app.route('/', methods=['GET', 'POST'])
 def chat_bot():
-  # Charger la base de connaissances
-  knowledge_base: dict = load_knowledge_base("knowledge_base.json")
+    user_input = ""
+    response = ""
+    if request.method == 'POST':
+        user_input = request.form.get('user_input')
+        knowledge_base = load_knowledge_base("knowledge_base.json")
 
-  while True:
-    # Obtenir l'entrée de l'utilisateur
-    user_input: str = input("you: ")
+        matches = find_best_match(user_input, [question["question"] for question in knowledge_base["questions"]])
 
-    # Si l'utilisateur tape "quit", terminer le chat
-    if user_input.lower() == "quit":
-      break
+        if matches:
+            response = get_anwser_for_question(matches, knowledge_base)
+        else:
+            response = "semhyi ur fhimegh ara tameslayt-ik"
+            new_answer: str = request.form.get('new_answer')
 
-    # Trouver la meilleure correspondance pour la question de l'utilisateur
-    best_match: str | None = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
+            if new_answer is not None and new_answer.lower() != "adi":
+                if "questions" not in knowledge_base:
+                    knowledge_base["questions"] = []
+                knowledge_base["questions"].append({"question": user_input , "answer": new_answer})
+                save_knowledge_base("knowledge_base.json", knowledge_base)
+                response = "bot: tanemmirt ik ! asagi talemad lhaja !"
 
-    if best_match:
-        # Si une correspondance a été trouvée, obtenir la réponse et l'imprimer
-        answer: str = get_anwser_for_question(best_match, knowledge_base)
-        print(f"bot: {answer}")
-    else:
-        # Si aucune correspondance n'a été trouvée, demander à l'utilisateur la réponse
-        print("bot: semhyi ur fhimegh ara tameslayt-ik")
-        new_answer: str = input('arud tameslayt-ik negh "adi" iwaken atadid: ')
-
-        # Si la réponse de l'utilisateur n'est pas "adi", ajouter la question et la réponse à la base de connaissances
-        if new_answer.lower() != "adi":
-          if "questions" not in knowledge_base:
-            knowledge_base["questions"] = []
-          knowledge_base["questions"].append({"question": user_input , "answer": new_answer})
-          save_knowledge_base("knowledge_base.json", knowledge_base)
-          print("bot: tanemmirt ik ! asagi talemad lhaja !")
+    return render_template('chat.html', response=response)
 
 if __name__ == "__main__":
-  # Démarrer le chatbot
-  chat_bot()
-  
-
+    app.run(debug=True)

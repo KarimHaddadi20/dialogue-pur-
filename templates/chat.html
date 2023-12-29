@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Bot</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Chat Bot</h1>
+        </div>
+        <div class="chat-conversation">
+            <!-- <p><strong>You:</strong> {{ user_input }}</p> -->
+            <p><strong>chatbot :</strong> {{ response }}</p>
+        </div>
+        <form method="POST">
+            <input type="text" name="user_input" placeholder="Type your message here..." required>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</body>
+</html>
