@@ -60,4 +60,3 @@ if __name__ == "__main__":
   # Démarrer le chatbot
   chat_bot()
 
-  #uiuiuiiiiii 
