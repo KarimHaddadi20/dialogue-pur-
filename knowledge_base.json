@@ -104,7 +104,12 @@
     {
       "question": "Quel est l'animal national de l'Australie ?",
       "answer": "L'animal national de l'Australie est le kangourou."
-    }
+    },
 
+
+    {
+      "question": "Quel est le capital des Etas unis  ?",
+      "answer": "washintong dc est la capital des etas unis"
+    }
   ]
 }

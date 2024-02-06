@@ -54,7 +54,7 @@ def chat_bot():
         if matches:
             response = get_anwser_for_question(matches, knowledge_base)
         else:
-            response = "semhyi ur fhimegh ara tameslayt-ik"
+            response = "J'ai pas compris votre question, pouvez-vous reformuler ?"
             new_answer: str = request.form.get('new_answer')
 
             if new_answer is not None and new_answer.lower() != "adi":
@@ -62,7 +62,7 @@ def chat_bot():
                     knowledge_base["questions"] = []
                 knowledge_base["questions"].append({"question": user_input , "answer": new_answer})
                 save_knowledge_base("knowledge_base.json", knowledge_base)
-                response = "bot: tanemmirt ik ! asagi talemad lhaja !"
+                response = "bot: j'ai bien compris ce que t'a dis  !"
 
     return render_template('chat.html', response=response)
 
