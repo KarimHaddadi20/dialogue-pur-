@@ -80,8 +80,42 @@
     {
       "question": "tu es qui",
       "answer": "je suis un chat conversationnel"
-    }
+    },
 
+
+    { 
+
+    "question": "bonjour",
+    "answer": "bonjour cava"
+    },
+
+
+    { 
+
+    "question": "bonjour",
+    "answer": "bonjour cava"
+    },
+
+    {
+      "question": "Quel est le capital de la France ?",
+      "answer": "Le capital de la France est Paris."
+    },
+    {
+      "question": "Qui a peint la Joconde ?",
+      "answer": "La Joconde a été peinte par Leonardo da Vinci."
+    },
+    {
+      "question": "Quelle est la planète la plus proche du soleil ?",
+      "answer": "La planète la plus proche du soleil est Mercure."
+    },
+    {
+      "question": "Qui a écrit 'Hamlet' ?",
+      "answer": "'Hamlet' a été écrit par William Shakespeare."
+    },
+    {
+      "question": "Quel est l'animal national de l'Australie ?",
+      "answer": "L'animal national de l'Australie est le kangourou."
+    }
 
 
   ]
