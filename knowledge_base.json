@@ -182,6 +182,11 @@
     {
       "question": "Quel est le plus grand océan du monde ?",
       "answer": "Le plus grand océan du monde est l'océan Pacifique."
+    },
+
+    {
+      "question": "Quelle est la capitale de l'Espagne ?",
+      "answer": "madrid"
     }
   ]
 }
