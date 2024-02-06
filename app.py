@@ -62,7 +62,7 @@ def chat_bot():
                     knowledge_base["questions"] = []
                 knowledge_base["questions"].append({"question": user_input , "answer": new_answer})
                 save_knowledge_base("knowledge_base.json", knowledge_base)
-                response = "bot: j'ai bien compris ce que t'a dis  !"
+                response = "bot: j'ai bien compris ce que t'a dis !"
 
     return render_template('chat.html', response=response)
 
