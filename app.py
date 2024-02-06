@@ -1,5 +1,6 @@
 
 from difflib import get_close_matches
+from fuzzywuzzy import process
 
 from flask import Flask, render_template, request
 import json
@@ -20,11 +21,25 @@ def find_best_match(user_input, questions):
             return question
     return None
 
+def find_best_match(user_input, questions):
+    # Utiliser fuzzywuzzy pour trouver la question la plus proche
+    best_match = process.extractOne(user_input, questions)
+    # best_match est un tuple où le premier élément est la meilleure correspondance
+    # et le deuxième élément est le score de correspondance
+    if best_match[1] > 80:  # Vous pouvez ajuster ce seuil en fonction de vos besoins
+        return best_match[0]
+    return None
+
 def get_anwser_for_question(match, knowledge_base):
+    # Parcourir chaque question dans la base de connaissances
     for item in knowledge_base["questions"]:
+            # Si la question correspond à la question trouvée
         if item["question"] == match:
             return item["answer"]
     return None
+
+
+# Définir la route principale de l'application
 
 @app.route('/', methods=['GET', 'POST'])
 def chat_bot():
@@ -53,3 +68,5 @@ def chat_bot():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
