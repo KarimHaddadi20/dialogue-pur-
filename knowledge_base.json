@@ -83,18 +83,7 @@
     },
 
 
-    { 
-
-    "question": "bonjour",
-    "answer": "bonjour cava"
-    },
-
-
-    { 
-
-    "question": "bonjour",
-    "answer": "bonjour cava"
-    },
+    
 
     {
       "question": "Quel est le capital de la France ?",
@@ -117,6 +106,9 @@
       "answer": "L'animal national de l'Australie est le kangourou."
     }
 
+{
 
+
+}
   ]
 }
