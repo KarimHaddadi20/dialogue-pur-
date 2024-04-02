@@ -1,18 +1,9 @@
-un projet ou le but c'est de créer un chat bot qui aide les gens dans leur tache 
 
+Ce projet est un chatbot basé sur une base de connaissances. Le chatbot est une application web construite avec le framework Flask en Python. Le chatbot interagit avec les utilisateurs via une interface web, où les utilisateurs peuvent poser des questions.
 
+Le chatbot utilise une base de connaissances pour répondre aux questions des utilisateurs. La base de connaissances est un fichier JSON qui contient une liste de paires de questions-réponses. Lorsqu'un utilisateur pose une question, le chatbot cherche la meilleure correspondance pour cette question dans la base de connaissances.
 
 //How to run the project :
 
 - python app.py
 
-
-in terminal we write this ?
-python app.py 
-
-
-// quelque fonctionnalité a rajouté dans mon chatbot
-
-par exemple dans les requetes ? 
-donne moi une image d'une plage et 
-sa m'affiche une plage 

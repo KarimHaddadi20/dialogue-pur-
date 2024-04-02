@@ -1,85 +1,71 @@
 {
   "questions": [
-    {
-      "question": "azul fellak",
-      "answer": "azul amek itelid"
-    },
-    {
-      "question": "iniyid ismik",
-      "answer": "nekk da chatbot ma yella wachou ikikhoussen iniyid aqliyi dagi"
-    },
-    {
-      "question": "anwi del president nel dzair",
-      "answer": "tebboune"
-    },
-    {
-      "question": "anwith jugurtha",
-      "answer": "jugurtha d le roi n la numidie "
-    },
-    {
-      "question": "anwith le roi juba 1",
-      "answer": "juba 1 ou juba est le dernier roi de numidie oriental "
-    },
-    {
-      "question": "azul ayhviviw",
-      "answer": "azul iniyid i wacu akin3awnegh"
-    },
-    {
-      "question": "azul",
-      "answer": "azul fellak iniyid deg wacu akin3awnegh"
-    },
-    {
-      "question": "anwith karim haddadi",
-      "answer": "karim haddadi est le cr\u00e9ateur du chatbot amazigh c'est qui a con\u00e7ue le chat bot amazigh afin d'aider les jeunes a l'utiliser dans leur quotidien "
-    },
-    {
-      "question": "berber tv ",
-      "answer": "berber tv c'est une chaine de t\u00e9l\u00e9vision berber "
-    },
-    {
-      "question": "anwi le cr\u00e9teur inek",
-      "answer": "azul fellak"
-    },
-    {
-      "question": "c\u00e9lia ",
-      "answer": "c\u00e9lia est la soeur de karim haddadi"
-    },
-    {
-      "question": "nouvel an ",
-      "answer": "une ann\u00e9e qui change"
-    },
-    {
-      "question": "amek itelid",
-      "answer": "lare bien i kecc"
-    },
-    {
-      "question": "anwa nekini",
-      "answer": "nekini thwatmass an karim"
-    },
-
-    {
-      "question": "tamazight",
-      "answer": "tutlayt n tmazight"
-    },
-
-    {
-      "question": "c'est qui ton créateur",
-      "answer": "karim haddadi est mon créateur"
-    },
+  
+  
 
     {
       "question": "salut ",
       "answer": "salut comment puis-je vous aider"
     },
-
     {
-      "question": "comment tu t'appelle",
-      "answer": "je m'appelle amazigh chatbot"
+      "question": "bonjour",
+      "answer": "bonjour comment puis-je vous aider"
     },
-
     {
-      "question": "tu es qui",
-      "answer": "je suis un chat conversationnel"
+      "question": "ça va",
+      "answer": "oui et vous"
+    },
+    {
+      "question": "qui est tu",
+      "answer": "je suis un chatbot"
+    },
+    {
+      "question": "qui est le president de la france",
+      "answer": "Emmanuel Macron est le président de la France."
+    },
+    {
+      "question": "qui est le president des etats unis",
+      "answer": "Joe Biden est le président des États-Unis."
+    },
+    {
+      "question": "qui est le president de la russie",
+      "answer": "Vladimir Poutine est le président de la Russie."
+    },
+    {
+      "question": "qui est le president de la chine",
+      "answer": "Xi Jinping est le président de la Chine."
+    },
+    {
+      "question": "qui est le president de l'angleterre",
+      "answer": "Boris Johnson est le président de l'Angleterre."
+    },
+    {
+      "question": "qui est le president de l'italie",
+      "answer": "Sergio Mattarella est le président de l'Italie."
+    },
+    {
+      "question": "qui est le president de l'allemagne",
+      "answer": "Frank-Walter Steinmeier est le président de l'Allemagne."
+    },
+    {
+      "question": "qui est le president de l'espagne",
+      "answer": "Pedro Sánchez est le président de l'Espagne."
+    },
+    {
+      "question": "qui est le president de la belgique",
+      "answer": "Alexander De Croo est le président de la Belgique."
+    },
+    {
+      "question": "qui est le president de la suisse",
+      "answer": "Guy Parmelin est le président de la Suisse."
+    },
+    {
+      "question": "qui est le president de la suède",
+      "answer": "Stefan Löfven est le président de la Suède."
+    },
+    {
+      "question": "qui est le president de la norvège",
+      "answer": "Erna Solberg est le président de la Norvège."
     },
 
     {
