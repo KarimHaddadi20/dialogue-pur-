@@ -8,11 +8,11 @@ import json
 app = Flask(__name__)
 
 def load_knowledge_base(filename):
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         return json.load(file)
-
+    
 def save_knowledge_base(filename, knowledge_base):
-    with open(filename, 'w') as file:
+    with open(filename, 'w', encoding='utf-8') as file:
         json.dump(knowledge_base, file)
 
 def find_best_match(user_input, questions):
